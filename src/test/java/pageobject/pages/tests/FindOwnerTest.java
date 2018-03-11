@@ -8,6 +8,8 @@ import pageobject.pages.pages.FindPage;
 import utils.driver.WebDriverCreators;
 import utils.driver.WebDriverProvider;
 
+import static org.assertj.core.api.Java6Assertions.assertThat;
+
 public class FindOwnerTest{
 
     private static final String PAGE_URL = "http://localhost:8080/owners/find";
@@ -19,6 +21,7 @@ public class FindOwnerTest{
 
     @Before
     public void setUp() {
+
         driver = new WebDriverProvider(WebDriverCreators.CHROME).getDriver();
         driver.manage().window().maximize();
 
@@ -29,9 +32,12 @@ public class FindOwnerTest{
 
     @Test
     public void findOwnerTest(){
+
         String name = "Kowalska";
 
         ownersPage.enterOwner(name);
         ownersPage.clickOnFindButton();
+
+        //brak assercji- wiem
     }
 }

@@ -14,11 +14,11 @@ import pageobject.pages.pages.NewOwnerPage;
 import pageobject.pages.pages.OwnersDataPage;
 import utils.driver.WebDriverCreators;
 import utils.driver.WebDriverProvider;
-import static org.assertj.core.api.Assertions.*;
+
+import static org.assertj.core.api.Java6Assertions.assertThat;
 
 
-
-public class AddOwnerTest{
+public class AddOwnerTestWithTngTech {
     @RunWith(DataProviderRunner.class)
     public static class AddNewOwner {
 
@@ -63,7 +63,7 @@ public class AddOwnerTest{
             newOwnerPage.inputOwnerInformation(firstName, lastName, address, city,telephone);
             newOwnerPage.clickOnNewOwnerButton();
 
-            Assertions.assertThat(ownersDataPage.getNameMessage()).contains(nameField);
+            assertThat(ownersDataPage.getNameMessage()).contains(nameField);
 
         }
 
